@@ -1,4 +1,4 @@
-# KrishiMarg
+# 🚛 KrishiMarg
 # 🌾 Problem Statement & Impact
 
 ## 📌 Why We Chose This Problem
@@ -28,6 +28,184 @@ By enabling condition-aware routing, KrishiMarg significantly reduces spoilage o
 - 🛒 Improved availability for consumers  
 
 Ultimately, KrishiMarg contributes to building a more efficient, sustainable, and resilient agricultural ecosystem in Bharat.
+
+
+
+
+## ⚙️ End-to-End Workflow
+
+### 1. User Input Layer
+
+The workflow begins with user-provided inputs collected via a Streamlit interface:
+
+- Source location (origin city)
+- Destination location
+- Crop type
+
+---
+
+### 2. Geospatial Processing
+
+- Input locations are converted into latitude–longitude coordinates using OpenStreetMap Nominatim API.
+- This enables downstream routing and environmental data mapping.
+
+---
+
+### 3. Route Generation (OSRM)
+
+- The system queries the OSRM routing engine to generate:
+  - Primary route
+  - Alternative routes
+
+Each route includes:
+- GeoJSON geometry
+- Distance (meters)
+- Duration (seconds)
+
+---
+
+### 4. Waypoint-Based Sampling
+
+- Each route is divided into waypoints at ~10 km intervals.
+- For each waypoint:
+  - Geographic coordinates are extracted
+  - Estimated arrival time is calculated based on route progression
+
+---
+
+### 5. Weather Data Integration
+
+- Weather data is fetched using Open-Meteo API for all waypoints.
+- Parameters collected:
+  - Temperature (°C)
+  - Relative Humidity (%)
+
+This creates a spatio-temporal environmental profile of each route.
+
+---
+
+### 6. Feature Extraction
+
+For each route, the following features are computed:
+
+- Average Temperature
+- Maximum Temperature
+- Minimum Temperature
+- Average Humidity
+- Distance (km)
+- Travel Time (hours)
+
+---
+
+### 7. Spoilage Risk Computation
+
+#### 7.1 Weighted Regression Formula
+
+A deterministic weighted scoring function is applied:
+
+Spoilage Score =
+0.3162 × Max Temp +
+0.2195 × Distance +
+0.2140 × Avg Humidity +
+0.1260 × Min Temp +
+0.1243 × Avg Temp
+
+This produces a continuous risk score for each route.
+
+---
+
+### 8. Route Evaluation & Ranking
+
+- All routes are evaluated using computed risk scores.
+- The optimal route is selected as the one with the minimum spoilage risk.
+
+---
+
+
+### 10. AI Recommendation Engine
+
+#### 10.1 LLM-Based Explanation
+
+- Model used: Sarvam-M
+- Generates:
+  - Natural language explanation
+  - Route comparison
+  - Justification of optimal route
+
+
+---
+
+### 11. Multilingual Processing
+
+#### Translation
+- Uses Sarvam translation API
+- Supports 8 Indian languages:
+  - English, Hindi, Marathi, Tamil, Telugu, Kannada, Bengali, Gujarati
+
+#### Text-to-Speech
+- Model: Bulbul v3
+- Generates audio output of route recommendation
+
+---
+
+### 12. Visualization Layer
+
+#### Map Visualization
+- Implemented using Folium
+- Displays:
+  - All candidate routes
+  - Color-coded paths
+  - Interactive tooltips with route metrics
+
+#### Comparative Analysis
+- Tabular comparison of:
+  - Distance
+  - Duration
+  - Temperature metrics
+  - Humidity
+  - Risk score
+  - Waypoints sampled
+
+---
+
+## 🧠 Key Technical Innovations
+
+- Waypoint-based weather sampling (10 km granularity)
+- Spatio-temporal route risk modeling
+- Crop-specific spoilage intelligence
+- Hybrid scoring (deterministic + ML-based)
+- Multilingual AI explainability (text + audio)
+- Databricks-native data pipeline
+
+---
+
+## 📊 System Architecture Summary
+
+User Input  
+→ Geocoding (OSM)  
+→ Route Generation (OSRM)  
+→ Waypoint Sampling  
+→ Weather Data Fetching  
+→ Feature Extraction  
+→ Risk Computation (Regression / ML)  
+→ Route Ranking  
+→ Data Storage (Databricks)  
+→ AI Recommendation (Sarvam M)  
+→ Translation + Text-to-Speech  
+→ Visualization + Output  
+
+---
+
+## 🚀 Final Output
+
+The system provides:
+
+- Optimal route (minimum spoilage risk)
+- Quantitative route comparison metrics
+- Visual route mapping
+- Multilingual explanation (text + audio)
+
+This ensures efficient, safe, and intelligent transportation of perishable agricultural goods.
 # 📊 Databricks Features Documentation for Agri-Logistics System
 
 ## 🗂️ Unity Catalog Tables
