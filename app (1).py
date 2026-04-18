@@ -14,12 +14,12 @@ from geopy.distance import geodesic
 
 # --- 1. INITIALIZATION & CONFIG ---
 w = WorkspaceClient()
-WAREHOUSE_ID = "2c3b173ddf7eb7ca"
+WAREHOUSE_ID = "YOUR_WAREHOUSE_ID"
 ANALYTICS_TABLE = "workspace.default.route_spoilage_analytics"
 CROP_REF_TABLE = "workspace.default.crop_reference_data"
 
 # ── SARVAM CONFIG ──────────────────────────────────────────────────
-SARVAM_API_KEY = "sk_4vap260f_hIWj3AZ6cyVmdhSekuYxth1k"
+SARVAM_API_KEY = "YOUR_API_KEY"
 SARVAM_HEADERS = {
     "api-subscription-key": SARVAM_API_KEY,
     "Content-Type": "application/json"
