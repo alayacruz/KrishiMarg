@@ -194,7 +194,7 @@ User Input
 → Translation + Text-to-Speech  
 → Visualization + Output  
 
-
+![Pipeline](pipeline.png)
 ## 🚀 Final Output
 
 The system provides:
