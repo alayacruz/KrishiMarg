@@ -40,7 +40,7 @@ The workflow begins with user-provided inputs collected via a Streamlit interfac
 
 - Source location (origin city)
 - Destination location
-- Crop type
+- Crop name (Tomato, Chili, Garlic, Onion, Orange, Soybean, Mustard, Groundnut, Rice)
 
 ---
 
@@ -194,7 +194,6 @@ User Input
 → Translation + Text-to-Speech  
 → Visualization + Output  
 
----
 
 ## 🚀 Final Output
 
