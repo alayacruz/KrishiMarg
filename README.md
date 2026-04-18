@@ -1,5 +1,33 @@
 # KrishiMarg
+# 🌾 Problem Statement & Impact
 
+## 📌 Why We Chose This Problem
+
+India faces a critical paradox — while being one of the largest producers of agricultural goods, a significant portion of fruits and vegetables is lost post-harvest due to inefficient transportation, lack of condition-aware routing, and poor cold-chain decisions. At the same time, many regions experience food shortages. This imbalance highlights a major gap in the agricultural supply chain, especially during transit.
+
+## 🚀 Our Solution: KrishiMarg
+
+**KrishiMarg** is designed to bridge this gap by making crop transportation smarter and more reliable. It takes into account key factors such as:
+
+- 🌡️ Temperature  
+- 💧 Humidity  
+- 🌦️ Climate conditions  
+- 🛣️ Road conditions  
+- 📍 Distance  
+
+Using these parameters, it computes the **optimal route** that ensures crops are transported in the safest and most efficient way possible.
+
+## 🇮🇳 Impact on Bharat
+
+By enabling condition-aware routing, KrishiMarg significantly reduces spoilage of perishable goods during transit. This leads to:
+
+- 📉 Reduction in food wastage  
+- 🚚 Faster and safer delivery of produce  
+- 🌍 Better distribution of food across regions  
+- 👨‍🌾 Increased income stability for farmers  
+- 🛒 Improved availability for consumers  
+
+Ultimately, KrishiMarg contributes to building a more efficient, sustainable, and resilient agricultural ecosystem in Bharat.
 # 📊 Databricks Features Documentation for Agri-Logistics System
 
 ## 🗂️ Unity Catalog Tables
