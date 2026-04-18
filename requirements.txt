@@ -1,0 +1,9 @@
+streamlit
+pandas
+requests
+folium
+streamlit-folium
+plotly
+databricks-sdk
+openai
+geopy
